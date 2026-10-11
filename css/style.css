@@ -1,0 +1,129 @@
+:root {
+    --bg: #fff0ef;
+    /* 背景のピンク */
+    --text: #806d64;
+    /* 文字の茶グレー */
+    --accent: #f4b8c0;
+    /* ハートのピンク */
+    --cream: #fffaf0;
+    /* ふにのクリーム色 */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Hiragino Maru Gothic ProN", "Meiryo", sans-serif;
+    line-height: 1.9;
+}
+
+/* トップ(画像と見出し) */
+.hero {
+    text-align: center;
+    padding: 48px 20px 8px;
+}
+
+.funi-img {
+    width: 200px;
+    max-width: 60%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    padding: 12px;
+    background-color: var(--cream);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(128, 109, 100, 0.15);
+    animation: fuwa 3s ease-in-out infinite;
+}
+
+@keyframes fuwa {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .funi-img {
+        animation: none;
+    }
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+    margin: 20px 0 4px;
+}
+
+.lead {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0;
+}
+
+/* 本文 */
+.wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 24px 20px 48px;
+    text-align: center;
+}
+
+.box {
+    background-color: var(--cream);
+    border-radius: 24px;
+    padding: 24px 20px;
+    margin-top: 24px;
+    box-shadow: 0 4px 12px rgba(128, 109, 100, 0.1);
+}
+
+.box h2 {
+    display: inline-block;
+    margin: 0 0 12px;
+    font-size: 1.3rem;
+    border-bottom: 3px dotted var(--accent);
+}
+
+.box p {
+    margin: 0;
+}
+
+/* すきなもの */
+.likes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.likes li {
+    background-color: var(--accent);
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 999px;
+}
+
+/* フッター */
+.footer {
+    text-align: center;
+    padding: 24px;
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 36px;
+    }
+}

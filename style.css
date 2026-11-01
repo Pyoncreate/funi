@@ -747,3 +747,169 @@ img {
         font-size: 18px;
     }
 }
+
+
+/* FUNI COLORING BOOK */
+
+.coloring-header {
+    padding: 18px 24px;
+    text-align: left;
+    background-color: var(--cream);
+}
+
+.coloring-logo {
+    color: var(--text);
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.coloring-page {
+    min-height: 70vh;
+    padding: 70px 20px;
+}
+
+.coloring-intro {
+    margin-bottom: 50px;
+}
+
+.coloring-intro h1 {
+    margin: 8px 0 16px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.coloring-intro p:last-child {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.coloring-list {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.coloring-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 36px;
+    background-color: var(--cream);
+    border-radius: 28px;
+}
+
+.coloring-image {
+    padding: 18px;
+    background-color: var(--white);
+    border-radius: 18px;
+}
+
+.coloring-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.coloring-info {
+    text-align: center;
+}
+
+.coloring-number {
+    color: #c98d91;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+}
+
+.coloring-info h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.coloring-info p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.coloring-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 28px;
+    background-color: var(--accent);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: 0.2s ease;
+}
+
+.coloring-download:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+.coloring-info .coloring-note {
+    margin-top: 10px;
+    color: #a9958c;
+    font-size: 11px;
+}
+
+.coloring-back {
+    margin-top: 50px;
+}
+
+.coloring-back a {
+    color: var(--text);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.coloring-back a:hover {
+    color: #c98d91;
+}
+
+/* スマートフォン */
+
+@media (max-width: 600px) {
+
+    .coloring-page {
+        padding: 48px 16px;
+    }
+
+    .coloring-intro h1 {
+        font-size: 26px;
+    }
+
+    .coloring-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .coloring-image {
+        padding: 10px;
+    }
+
+    .coloring-info h2 {
+        font-size: 21px;
+    }
+
+    .coloring-download {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+.coloring-description {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 2.2;
+    text-align: center;
+    color: var(--text);
+}

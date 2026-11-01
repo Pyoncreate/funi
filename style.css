@@ -907,9 +907,9 @@ img {
 
 .coloring-description {
     max-width: 680px;
-    margin: 0 auto;
+    margin: 24px auto 0;
     font-size: 14px;
-    line-height: 2.2;
+    line-height: 2;
     text-align: center;
     color: var(--text);
 }

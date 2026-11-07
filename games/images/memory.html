@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ふにの絵合わせ|FUNI MEMORY GAME</title>
+    <meta name="description" content="ふわふわキャラクターのふにと遊ぶ、かわいい絵合わせゲーム">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .memory-page {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 50px 20px 80px;
+            text-align: center;
+        }
+
+        .memory-title {
+            color: #806d64;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .memory-description {
+            color: #9b8981;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .memory-start {
+            display: inline-block;
+            background: #f3dce1;
+            color: #806d64;
+            padding: 13px 32px border-radius: 30px;
+            text-decoration: none;
+        }
+
+        .memory-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 35px auto;
+            max-width: 540px;
+        }
+
+        .memory-card {
+            aspect-ratio: 1/1;
+            background: #fff0f1;
+            border: 2px solid #f4dfe2;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b9959e;
+            font-size: 30px;
+        }
+
+        .memory-back {
+            font-size: 32px;
+        }
+
+        @media(max-width:480px) {
+            .memory-board {
+                gap: 8px;
+            }
+
+            .memory-card {
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="memory-page">
+        <p class="section-label">FUNI MEMORY GAME</p>
+        <h1 class="memory-title">ふにの絵合わせ</h1>
+
+        <p class="memory-description">
+            ふにのカードを2枚めくってみよう。
+            おなじ絵柄がそろったら大成功！
+        </p>
+
+        <a href="#" class="memory-start">ゲームスタート</a>
+
+        <div class="memory-board">
+            <div class="memory-card"><span class="memory-back">？</span></div>
+            <div class="memory-card"><span class="memory-back">？</span></div>
+            <div class="memory-card"><span class="memory-back">？</span></div>
+            <div class="memory-card"><span class="memory-back">？</span></div>
+            <div class="memory-card"><span class="memory-back">？</span></div>
+            <div class="memory-card"><span class="memory-back">？</span></div>
+            <div class="memory-card"><span class="memory-back">？</span></div>
+            <div class="memory-card"><span class="memory-back">？</span></div>
+            <div class="memory-card"><span class="memory-back">？</span></div>
+            <div class="memory-card"><span class="memory-back">？</span></div>
+            <div class="memory-card"><span class="memory-back">？</span></div>
+            <div class="memory-card"><span class="memory-back">？</span></div>
+        </div>
+
+        <div class="coloring-back">
+            <a href="..index.html#play">ふにとあそぼうに戻る</a>
+        </div>
+
+    </main>
+</body>
+
+</html>

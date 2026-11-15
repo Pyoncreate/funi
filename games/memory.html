@@ -74,6 +74,19 @@
             font-weight: bold;
         }
 
+        .memory-card img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+        }
+
+        .memory-card.is-matched {
+            background: #fff8f8;
+            border-color: #e8c4ca;
+            cursor: default;
+        }
+
+
         @media(max-width:480px) {
             .memory-board {
                 gap: 8px;
@@ -109,6 +122,111 @@
         </div>
 
     </main>
+
+    <script>
+        const images = [
+            "images/funi-01.png",
+            "images/funi-02.png",
+            "images/funi-03.png",
+            "images/funi-04.png",
+            "images/funi-05.png",
+            "images/funi-06.png"
+        ];
+
+        const board = document.getElementById("memoryBoard");
+        const startButton = document.getElementById("memoryStart");
+        const message = document.getElementById("gameMessage");
+
+        let firstCard = null;
+        let secondCard = null;
+        let lockBoard = false;
+        let matchedPairs = 0;
+
+        startButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            startGame();
+        });
+
+        function startGame() {
+            board.innerHTML = "";
+            firstCard = null;
+            secondCard = null;
+            lockBoard = false;
+            matchedPairs = 0;
+
+            message.textContent = "同じ絵柄をそろえてね！";
+
+            const cards = [...images, ...images];
+            cards.sort(() => Math.random() - 0.5);
+
+            cards.forEach(function (image) {
+                const card = document.createElement("div");
+                card.classList.add("memory-card");
+                card.dataset.image = image;
+                card.innerHTML = '<span class="memory-back">？</span>';
+
+                card.addEventListener("click", function () {
+                    flipCard(card);
+                });
+
+                board.appendChild(card);
+            });
+        }
+
+        function flipCard(card) {
+            if (
+                lockBoard ||
+                card.classList.contains("is-open") ||
+                card.classList.contains("is-matched")
+            ) {
+                return;
+            }
+
+            card.classList.add("is-open");
+            card.innerHTML = '<img src="' + card.dataset.image + '" alt="ふに">';
+
+            if (!firstCard) {
+                firstCard = card;
+                return;
+            }
+
+            secondCard = card;
+            lockBoard = true;
+
+            if (firstCard.dataset.image === secondCard.dataset.image) {
+                firstCard.classList.add("is-matched");
+                secondCard.classList.add("is-matched");
+
+                matchedPairs++;
+                resetTurn();
+
+                if (matchedPairs === 6) {
+                    message.textContent = "大成功！ふにのカードが全部そろったよ♡";
+                } else {
+                    message.textContent = "やったね！同じ絵柄がそろったよ♡";
+                }
+            } else {
+                message.textContent = "あれれ？もう一度チャレンジ！";
+
+                setTimeout(function () {
+                    firstCard.classList.remove("is-open");
+                    secondCard.classList.remove("is-open");
+
+                    firstCard.innerHTML = '<span class="memory-back">？</span>';
+                    secondCard.innerHTML = '<span class="memory-back">？</span>';
+
+                    resetTurn();
+                }, 900);
+            }
+        }
+
+        function resetTurn() {
+            firstCard = null;
+            secondCard = null;
+            lockBoard = false;
+        }
+    </script>
+
 </body>
 
 </html>

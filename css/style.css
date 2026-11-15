@@ -904,3 +904,12 @@ img {
         max-width: 280px;
     }
 }
+
+.coloring-description {
+    max-width: 680px;
+    margin: 24px auto 0;
+    font-size: 14px;
+    line-height: 2;
+    text-align: center;
+    color: var(--text);
+}

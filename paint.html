@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>ふにのぬりえ｜ブラウザで塗れる無料のオンラインぬりえ</title>
+    <meta name="description" content="ふにのぬりえを、ブラウザでそのまま塗れます。アプリ不要・無料。色を選んで塗りたいところをタップするだけ。できあがった絵は画像で保存できます。">
+    <link rel="canonical" href="https://pyoncreate.github.io/funi/paint.html">
+
+    <!-- SNSで共有されたときの表示 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ふにのぬりえ｜ブラウザで塗れる無料のオンラインぬりえ">
+    <meta property="og:description" content="色を選んでタップするだけ。ふにのぬりえを、スマホでもパソコンでも楽しめます。">
+    <meta property="og:url" content="https://pyoncreate.github.io/funi/paint.html">
+    <meta property="og:image" content="https://pyoncreate.github.io/funi/images/coloring-01-hinatabokko.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/extra.css">
+    <link rel="stylesheet" href="css/paint.css">
+</head>
+
+<body>
+
+    <!-- ヘッダー -->
+    <header class="coloring-header">
+        <a href="index.html" class="coloring-logo">
+            ふに｜ふわふわ、のんびり。
+        </a>
+    </header>
+
+    <main class="coloring-page">
+
+        <!-- タイトル -->
+        <div class="coloring-intro">
+            <p class="section-label">FUNI COLORING BOOK</p>
+            <h1>ふにのぬりえ(ブラウザで塗れる)</h1>
+            <p class="coloring-description">
+                ふにのぬりえを、ブラウザでそのまま塗れる無料のオンラインぬりえです。
+                アプリは不要。色をえらんで、塗りたいところをタップするだけ。
+                スマホでもパソコンでも楽しめます。
+            </p>
+        </div>
+
+        <!-- ぬりえ本体 -->
+        <section class="paint-app" aria-label="ぬりえ">
+
+            <noscript>
+                <p>ブラウザでぬりえを塗るには、JavaScriptを有効にしてください。</p>
+            </noscript>
+
+            <!-- ぬりえをえらぶ -->
+            <div class="paint-picker" id="picker"></div>
+
+            <!-- キャンバス -->
+            <div class="paint-stage">
+                <canvas id="paint" class="paint-canvas" role="img" aria-label="ぬりえ"></canvas>
+            </div>
+            <p class="paint-status" id="status" role="status"></p>
+
+            <!-- 色えらび -->
+            <div class="paint-palette" id="palette"></div>
+            <label class="paint-custom">
+                じぶんの色
+                <input type="color" id="custom-color" value="#f4b8c0">
+            </label>
+
+            <!-- ボタン -->
+            <div class="paint-toolbar">
+                <button type="button" class="paint-btn is-sub" id="undo">もどす</button>
+                <button type="button" class="paint-btn is-sub" id="clear">ぜんぶ消す</button>
+                <button type="button" class="paint-btn" id="save">画像を保存する</button>
+            </div>
+
+            <p class="paint-print">
+                <a href="coloring.html" id="pdf-link">PDFで印刷する</a>
+            </p>
+
+        </section>
+
+        <!-- 使い方 -->
+        <section class="coloring-guide">
+
+            <h2>ぬりえの使い方</h2>
+            <ol>
+                <li>上の一覧から、塗りたいぬりえをえらびます。</li>
+                <li>パレットから、好きな色をえらびます。</li>
+                <li>塗りたい場所をタップすると、その部分に色がつきます。</li>
+                <li>できあがったら「画像を保存する」を押します。</li>
+            </ol>
+
+            <h2>塗った絵について</h2>
+            <p>
+                塗った絵は、あなたのブラウザの中だけで作られます。サーバーには送信されません。
+                保存した画像は、個人で楽しむ範囲でご自由にお使いください。
+                商用利用や再配布はご遠慮ください。
+            </p>
+
+            <h2>塗ったらみせてね</h2>
+            <p>
+                完成したぬりえは、SNSで「#ふにのぬりえ」をつけて見せてもらえるとうれしいです。
+            </p>
+
+        </section>
+
+        <!-- LINEスタンプ -->
+        <section class="coloring-sticker">
+            <h2>ふにのLINEスタンプ</h2>
+            <p>ふにのLINEスタンプを2種類販売中です。</p>
+            <a href="https://store.line.me/stickershop/product/34119301/ja" class="line-button" target="_blank"
+                rel="noopener noreferrer">
+                第1弾をLINEストアで見る
+            </a>
+            <a href="https://store.line.me/stickershop/product/36835788/ja" class="line-button" target="_blank"
+                rel="noopener noreferrer">
+                第2弾をLINEストアで見る
+            </a>
+        </section>
+
+        <!-- 他のページへ -->
+        <nav class="coloring-more" aria-label="ほかのページ">
+            <a href="coloring.html">印刷できるぬりえ(PDF)</a>
+            <a href="games/memory.html">ふにの絵合わせであそぶ</a>
+            <a href="index.html">ふにのトップへ</a>
+        </nav>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <p>ふわふわ、のんびり。ふにの暮らし。</p>
+        <small>&copy; 2026 pyoncreate</small>
+    </footer>
+
+    <script src="js/paint.js"></script>
+</body>
+
+</html>

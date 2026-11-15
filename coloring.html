@@ -23,7 +23,143 @@
 
 </head>
 
+ <!-- このページ専用のCSS(「どっちで塗る?」カード・ボタン・LINEスタンプ枠)
+       extra.css より後ろに置いているので、こちらが優先されます -->
+  <style>
+    .coloring-page {
+      --fc-card: #fff9f2;
+      --fc-text: #7a6a60;
+      --fc-pink: #e9a9b7;
+      --fc-pink-deep: #d9788f;
+      --fc-mint: #8fc9b5;
+      --fc-mint-deep: #5fae96;
+    }
 
+    /* ---- どっちで塗る? ---- */
+    .coloring-page .coloring-choice {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto 56px;
+      padding: 0 16px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .coloring-page .coloring-choice h2 {
+      font-size: clamp(20px, 4.5vw, 26px);
+      margin: 0 0 20px;
+    }
+
+    .coloring-page .coloring-choice__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .coloring-page a.coloring-choice__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 28px 20px 26px;
+      background: var(--fc-card);
+      border: 3px solid transparent;
+      border-radius: 28px;
+      color: var(--fc-text);
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(201, 127, 146, .15);
+      transition: transform .15s, box-shadow .15s;
+    }
+
+    .coloring-page a.coloring-choice__item:visited {
+      color: var(--fc-text);
+    }
+
+    .coloring-page a.coloring-choice__item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(201, 127, 146, .25);
+    }
+
+    .coloring-page .coloring-choice__icon { font-size: 52px; line-height: 1; }
+    .coloring-page .coloring-choice__name { font-size: 22px; font-weight: bold; }
+    .coloring-page .coloring-choice__desc { font-size: 14px; line-height: 1.7; }
+
+    .coloring-page .coloring-choice__go {
+      margin-top: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .coloring-page a.coloring-choice__item--print   { border-color: var(--fc-mint); }
+    .coloring-page a.coloring-choice__item--print   .coloring-choice__go { background: var(--fc-mint-deep); }
+    .coloring-page a.coloring-choice__item--browser { border-color: var(--fc-pink); }
+    .coloring-page a.coloring-choice__item--browser .coloring-choice__go { background: var(--fc-pink-deep); }
+
+    /* ---- 各ぬりえのボタン(同じ幅・同じ重さで縦に並べる) ---- */
+    .coloring-page .coloring-list {
+      scroll-margin-top: 16px;
+    }
+
+    .coloring-page .coloring-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .coloring-page .coloring-actions .coloring-download {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 380px;
+      margin: 0;
+      padding: 14px 20px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.4;
+      text-align: center;
+      text-decoration: none;
+      white-space: normal;
+    }
+
+    .coloring-page .coloring-actions .coloring-download small {
+      display: block;
+      margin-top: 2px;
+      font-size: 12px;
+      font-weight: normal;
+      opacity: .95;
+    }
+
+    .coloring-page .coloring-actions .coloring-download--browser { background: var(--fc-pink-deep); }
+    .coloring-page .coloring-actions .coloring-download--print   { background: var(--fc-mint-deep); }
+
+    /* ---- 使い方エリアの小見出し ---- */
+    .coloring-page .coloring-guide h3 {
+      font-size: 1.05em;
+      margin: 20px 0 8px;
+    }
+
+    /* ---- LINEスタンプ(クリーム色の枠の外に、別エリアとして置く) ---- */
+    .coloring-page .coloring-sticker {
+      width: 100%;
+      max-width: 880px;
+      margin: 48px auto 0;
+      padding: 0 16px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .coloring-page .coloring-choice__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+</head>
 
 <body>
 
@@ -50,22 +186,22 @@
   </div>
 
   <!--どっちで塗る-->
-  <section class="coloring-choice"aria-labeledby="choice-title">
+  <section class="coloring-choice" aria-labelledby="choice-title">
     <h2 id="choice-title">どっちで塗る？</h2>
     <div class="coloring-choice__grid">
         
       <a href="#list" class= "coloring-choice__item coloring-choice__item--print">
-          <span class="coloring-choice__icon" aria-hiddnen="true">🖨️</span>
-          <span class="coloring-choice__name">印刷して塗る</span>
-          <span class="coloring-choice__desc">えんぴつ・くれよんで<br>A4のPDFをおうちで印刷</span>
-          <span class="coloring-choice__go">ぬりえを選ぶ ↓</span>
+        <span class="coloring-choice__icon" aria-hidden="true">🖨️</span>
+        <span class="coloring-choice__name">印刷して塗る</span>
+        <span class="coloring-choice__desc">えんぴつ・くれよんで<br>A4のPDFをおうちで印刷</span>
+        <span class="coloring-choice__go">ぬりえを選ぶ ↓</span>
       </a>
 
       <a href="paint.html" class="coloring-choice__item coloring-choice__item--browser">
-          <span class="coloring-choice__icon" aria-hiddnen="true">🎨</span>
-          <span class="coloring-choice__name">ブラウザで塗る</span>
-          <span class="coloring-choice__desc">アプリ不要・スマホでもOK<br>そのまま今すぐ塗れる</span>
-          <span class="coloring-choice__go">今すぐ塗る ↓</span>
+        <span class="coloring-choice__icon" aria-hidden="true">🎨</span>
+        <span class="coloring-choice__name">ブラウザで塗る</span>
+        <span class="coloring-choice__desc">アプリ不要・スマホでもOK<br>そのまま今すぐ塗れる</span>
+        <span class="coloring-choice__go">今すぐ塗る →</span>
       </a>
     </div>
   </section>
@@ -78,7 +214,7 @@
       <div class="coloring-image">
         <img
           src="images/coloring-01-hinatabokko.png"
-          alt="お花に囲まれて、ひなたぼっこをしながらお昼寝するのふにのぬりえ(線画)">
+          alt="お花に囲まれて、ひなたぼっこをしながらお昼寝するふにのぬりえ(線画)">
       </div>
 
       <div class="coloring-info">
@@ -104,7 +240,7 @@
           target="_blank"
           rel="noopener noreferrer">
           🖨️印刷して塗る(PDF)
-          <small>「ひなたぼっこふに」のPDFをダウンロード ↓ </small>
+          <small>A4サイズ・PDFをダウンロード ↓ </small>
           </a>
         </div>
       </div>
@@ -137,13 +273,13 @@
           <small>アプリ不要・スマホでもOK</small>
           </a>
 
-        <a href="downloads/coloring-02-pocket-funi.pdf"
+          <a href="downloads/coloring-02-pocket-funi.pdf"
           class="coloring-download coloring-download--print"
           target="_blank"
           rel="noopener noreferrer">
           🖨️印刷して塗る(PDF)
-          <small>「ぽけっとふに」A4サイズ</small>
-        </a>
+          <small>A4サイズ・ダウンロード ↓</small>
+          </a>
         </div>
       </div>
     </article>
@@ -191,24 +327,25 @@
     <h2>塗ったら見せてね</h2>
     <p>完成した塗り絵は、SNSで＃ふにのぬりえをつけて見せてね🌸
     </p>
-    
-    <!--LINE スタンプ　-->
-    <section class="coloring-sticker">
-      <h2>ふにのLINEスタンプ</h2>
-      <p>ふにのLINEスタンプを２種類はんばいちゅう</p>
-      <a href="https://store.line.me/stickershop/product/34119301/ja"
-        class="line-button"
-        target="_blank"
-        rel="noopener noreferrer">
-        第1弾をストアで見る
-      </a>
+  </section>
 
-      <a href="https://store.line.me./stickershop/product/36835788/ja"
-        class="line-button"
-        target="_blank"
-        rel="noopener noreferrer">
-        第2弾をストアで見る
-      </a>
+  <!--LINE スタンプ　-->
+  <section class="coloring-sticker">
+    <h2>ふにのLINEスタンプ</h2>
+    <p>ふにのLINEスタンプを２種類はんばいちゅう</p>
+    <a href="https://store.line.me/stickershop/product/34119301/ja"
+      class="line-button"
+      target="_blank"
+      rel="noopener noreferrer">
+      第1弾をストアで見る
+    </a>
+
+    <a href="https://store.line.me./stickershop/product/36835788/ja"
+      class="line-button"
+      target="_blank"
+      rel="noopener noreferrer">
+      第2弾をストアで見る
+    </a>
   </section>
 
 

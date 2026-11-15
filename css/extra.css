@@ -1,0 +1,130 @@
+/* ふにサイト 追加スタイル
+   css/style.css のあとに読み込みます。既存の style.css は変更しません。 */
+
+
+/* ---------------------------------
+   トップページ
+   見出しを h2 → h1 に変えたぶんの見た目調整
+   (以前の .about h2 と同じ見た目にそろえています)
+--------------------------------- */
+
+.about h1 {
+    margin: 0 0 20px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+
+/* ---------------------------------
+   ぬりえページ 追加パーツ
+--------------------------------- */
+
+/* 「ブラウザで塗る」ボタン */
+.coloring-online {
+    margin: -20px 0 44px;
+}
+
+.coloring-online p {
+    margin: 8px 0 0;
+    color: #a9958c;
+    font-size: 12px;
+}
+
+/* ぬりえカード同士のすきま */
+.coloring-item+.coloring-item {
+    margin-top: 24px;
+}
+
+/* 使い方・ご利用 / LINEスタンプ のカード */
+.coloring-guide,
+.coloring-sticker {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding: 36px;
+    background-color: var(--cream);
+    border-radius: 28px;
+}
+
+.coloring-guide h2,
+.coloring-sticker h2 {
+    margin: 28px 0 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.coloring-guide h2:first-child,
+.coloring-sticker h2:first-child {
+    margin-top: 0;
+}
+
+.coloring-guide p,
+.coloring-sticker p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* 番号つきリストは、枠の中央に置きつつ文字は左そろえ */
+.coloring-guide ol {
+    display: inline-block;
+    margin: 0;
+    padding-left: 1.4em;
+    text-align: left;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.coloring-sticker .line-button {
+    margin: 18px 6px 0;
+}
+
+/* ほかのページへのリンク(丸いボタン風) */
+.coloring-more {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.coloring-more a {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1px solid #e8c9c6;
+    border-radius: 999px;
+    background-color: var(--cream);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.coloring-more a:hover {
+    background-color: #f9dfe0;
+    transform: translateY(-2px);
+}
+
+/* スマートフォン */
+@media (max-width: 600px) {
+
+    .coloring-guide,
+    .coloring-sticker {
+        margin-top: 28px;
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    .coloring-sticker .line-button {
+        display: block;
+        max-width: 280px;
+        margin: 14px auto 0;
+    }
+
+    .coloring-more a {
+        padding: 9px 18px;
+        font-size: 13px;
+    }
+}

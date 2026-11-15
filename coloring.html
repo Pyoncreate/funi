@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
   <title>ふにのぬりえ｜FUNI COLORING BOOK | 無料で印刷できるかわいいぬりえ</title>
-  <meta name="description" content="ふにのかわいいぬりえをむりょうでダウンロード。好きないろでふにを彩ってね。">
+  <meta name="description" content="ふにのかわいいぬりえをむりょうで。A4のPDFをダウンロードして印刷するのも、スマホやパソコンのブラウザでそのまま塗るのもOK🌸好きないろでふにを彩ってね。">
 
   <link rel="canonical" href="https://pyoncreate.github.io/funi/coloring.html">
 
@@ -39,26 +39,39 @@
   <!-- タイトル -->
   <div class="coloring-intro">
     <p class="section-label">FUNI COLORING BOOK</p>
-    <h1>ふにのぬりえ (むりょう・いんさつOK)</h1>
+    <h1>ふにのぬりえ (いんさつでもブラウザでも塗れる)</h1>
     <p class="coloring-description">
       ふにのぬりえへようこそ。
-      ふわふわで、のんびり屋のキャラクター「ふに」といっしょに、ぬりえを楽しんでみよう。
-      A4サイズのPDFなので、おうちのプリンターですぐいんさつできます。
+      ふわふわで、のんびりやさんのふにといっしょに、ぬりえを楽しんでみよう。
       ひなたぼっこをしたり、おひるねをしたり、おいしいおかしをたべたり。
-      ふにの日常をえがいたかわいいイラストをいろえんぴつやクレヨンで、
+      ふにの日常をえがいたかわいいイラストを
       好きないろでじゆうに塗ってみてね。
     </p>
   </div>
 
-  <!--ブラウザで塗る-->
-  <div class="coloring-online">
-    <a href="paint.html" class="coloring-download">ブラウザで塗ってみる → </a>
-    <p>アプリ不要・スマホでもOK</p>
-  </div>
-    
+  <!--どっちで塗る-->
+  <section class="coloring-choice"aria-labeledby="choice-title">
+    <h2 id="choice-title">どっちで塗る？</h2>
+    <div class="coloring-choice__grid">
+        
+      <a href="#list" class= "coloring-choice__item coloring-choice__item--print">
+          <span class="coloring-choice__icon" aria-hiddnen="true">🖨️</span>
+          <span class="coloring-choice__name">印刷して塗る</span>
+          <span class="coloring-choice__desc">えんぴつ・くれよんで<br>A4のPDFをおうちで印刷</span>
+          <span class="coloring-choice__go">ぬりえを選ぶ ↓</span>
+      </a>
+
+      <a href="paint.html" class="coloring-choice__item coloring-choice__item--browser">
+          <span class="coloring-choice__icon" aria-hiddnen="true">🎨</span>
+          <span class="coloring-choice__name">ブラウザで塗る</span>
+          <span class="coloring-choice__desc">アプリ不要・スマホでもOK<br>そのまま今すぐ塗れる</span>
+          <span class="coloring-choice__go">今すぐ塗る ↓</span>
+      </a>
+    </div>
+  </section>
 
   <!-- ぬりえ一覧 -->
-  <section class="coloring-list">
+  <section class="coloring-list" id="list">
 
     <article class="coloring-item">
       
@@ -79,17 +92,21 @@
           すやすやおひるね。
         </p>
 
-        <a href="downloads/coloring-01-hinatabokko.pdf"
-          class="coloring-download"
+        <div class="coloring-actions">
+          <a href="paint.html#hinatabokko"
+          class="coloring-download coloring-download--browser">
+          🎨ブラウザで塗る
+          <small>アプリ不要・スマホでもOK</small>
+          </a>
+
+          <a href="downloads/coloring-01-hinatabokko.pdf"
+          class="coloring-download coloring-download--print"
           target="_blank"
           rel="noopener noreferrer">
-          「ひなたぼっこふに」のPDFをダウンロード ↓
-        </a>
-
-        <p class="coloring-note">
-            A4サイズ・PDF形式
-        </p>
-
+          🖨️印刷して塗る(PDF)
+          <small>「ひなたぼっこふに」のPDFをダウンロード ↓ </small>
+          </a>
+        </div>
       </div>
     </article>
 
@@ -113,19 +130,39 @@
           ふにがひょっこりこんにちは。
         </p>
 
+        <div class="coloring-actions">
+          <a href="paint.html#pocket-funi"
+          class="coloring-download coloring-download--browser">
+          🎨ブラウザで塗る
+          <small>アプリ不要・スマホでもOK</small>
+          </a>
+
         <a href="downloads/coloring-02-pocket-funi.pdf"
-          class="coloring-download"
+          class="coloring-download coloring-download--print"
           target="_blank"
           rel="noopener noreferrer">
-          「ぽけっとふに」のPDFをダウンロード ↓
+          🖨️印刷して塗る(PDF)
+          <small>「ぽけっとふに」A4サイズ</small>
         </a>
-
-        <p class="coloring-note">
-            A4サイズ・PDF形式
-        </p>
+        </div>
       </div>
     </article>
+  </section>
 
+  <!-- ふにのぬりえについて(もとの導入文。検索キーワードを含む説明) -->
+  <section class="coloring-about">
+    <h2>ふにのぬりえについて</h2>
+    <p>
+      ふにのぬりえへようこそ。
+      ふわふわで、のんびり屋のキャラクター「ふに」といっしょに、ぬりえを楽しんでみよう。
+      A4サイズのPDFなので、おうちのプリンターですぐいんさつできます。
+      ブラウザで塗るなら、アプリのインストールは不要。スマホでもパソコンでも、すぐに塗れます。
+    </p>
+    <p>
+      ひなたぼっこをしたり、おひるねをしたり、おいしいおかしをたべたり。
+      ふにの日常をえがいたかわいいイラストを、いろえんぴつやクレヨンで、
+      好きないろでじゆうに塗ってみてね。
+    </p>
   </section>
 
   <!--使い方・ご利用について-->
@@ -134,9 +171,15 @@
     
     <h2>ぬりえの使い方</h2>
     <ol>
-      <li>すきなぬりえの「ダウンロード」ボタンを押します。</li>
+      <li>すきなぬりえの「印刷して塗る(PDF)」ボタンを押します。</li>
       <li>PDFをA4サイズでいんさつします。</li>
       <li>色えんぴつ、クレヨン、マーカーなど、好きな道具で自由に塗ってね。</li>
+    </ol>
+
+    <h3>ブラウザで塗る場合</h3>
+    <ol>
+      <li>「ブラウザで塗る」ボタンを押します。</li>
+      <li>好きな色を選んで、塗りたい場所をタップ(クリック)します。</li>
     </ol>
 
     <h2>ご利用について</h2>
@@ -166,7 +209,7 @@
         rel="noopener noreferrer">
         第2弾をストアで見る
       </a>
-    </section>
+  </section>
 
 
   <!-- ほかのページへ -->
